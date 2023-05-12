@@ -1,0 +1,629 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./contact.css">
+    <title>CONTACT US</title>
+</head>
+<body>
+
+    <!-- SECTION A  -->
+    <section class="A">
+        <div class="logo">
+                <div class="Limg">
+                    <img src="{% static 'img/img1.png' %}" width="35px" height="35px" alt="">
+                </div>
+                <div class="K">
+                    <span>K</span>
+                </div>
+        </div>
+        <div class="pk">
+            <h1> LOGISTICS</h1>
+        </div>
+  
+        <div class="contact">
+            <div class="phone">
+                <h2><i class="fa-solid fa-phone"></i>    Bookings: +91 888888888</h2>
+                <h2><i class="fa-regular fa-envelope"></i> *****************@gmail.com</h2>
+            </div>
+  
+            <div class="quote">
+                <button class="btn"> <p>REQUEST A QUOTE</p></button>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- SECTION B -->
+
+  <section class="B">
+
+    <ul class="nav-list">
+      <li><a href="/">HOME</a></li>
+      <li><a href="/about">ABOUT</a></li>
+      <li><a href="/services">SERVICES</a></li>
+      <li><a href="/contact">CONTACT US</a></li>
+    </ul>
+    <div class="headtext">
+      <h1> CONTACT US</h1>
+      <!-- <p>Always Available Day and Night 365 Days <br> Real-Time tracking <br> Urgent Delivart.? We've got you covered</p> -->
+  </div>
+  </section>
+
+  <section class="C">
+
+  </section>
+  <!-- SECTION G  -->
+
+<section class="F">
+    <div class="parallax">
+        <div class="parallax-inner">
+            <!-- <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatem, laborum quisquam adipisci nam ea hic, consequuntur, ratione culpa cumque quam aperiam recusandae! Amet corrupti maxime molestias nam odit doloremque magni, veniam odio autem dolore numquam tempore corporis doloribus repudiandae necessitatibus aut delectus aspernatur consequuntur provident libero! Porro vel, illum aspernatur perspiciatis suscipit tempora sapiente quasi culpa facere officia commodi ipsa aliquam voluptatibus alias obcaecati quos hic saepe debitis magni! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam velit ipsa nostrum unde! Officiis, enim voluptatem! Suscipit, officia minus, dolor in facilis tenetur dolore perferendis voluptates beatae assumenda eaque enim.</p> -->
+            <div class="content">
+                <h1>We would be delighted to <br> hear from you.</h1>
+                <p>Whether you're looking for a quote or have a <br> question to ask, enter your details in the form and we <br> well get in contact with you promptly.</p>
+            </div>
+            <div class="details">
+                <div class="form">
+                    <form method="POST" action="{% url 'home' %}">
+                        {% csrf_token %}
+                        <div class="row">
+                          <div class="input_group">
+                            <input type="text" id="{{ form.name.id_for_label }}" name="{{ form.name.name }}" value="{{ form.name.value|default:'' }}" required>
+                            <label for="{{ form.name.id_for_label }}"><i class="fa-solid fa-user"></i> Your Name</label>
+                          </div>
+                          <div class="input_group">
+                            <input type="text" id="{{ form.phone.id_for_label }}" name="{{ form.phone.name }}" value="{{ form.phone.value|default:'' }}" required>
+                            <label for="{{ form.phone.id_for_label }}"><i class="fa-solid fa-mobile-button"></i> Phone No.</label>
+                          </div>
+                        </div>
+                        <div class="input_group">
+                          <input type="email" id="{{ form.email.id_for_label }}" name="{{ form.email.name }}" value="{{ form.email.value|default:'' }}" required>
+                          <label for="{{ form.email.id_for_label }}"><i class="fa-solid fa-envelope"></i> Email ID</label>
+                        </div>
+                        <div class="input_group">
+                          <textarea id="{{ form.message.id_for_label }}" name="{{ form.message.name }}" required>{{ form.message.value|default:'' }}</textarea>
+                          <label for="{{ form.message.id_for_label }}"><i class="fa-solid fa-message"></i> Message</label>
+                        </div>
+                        <button type="submit">SUBMIT <i class="fa-solid fa-paper-plane"></i></button>
+                      </form>
+                      
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer1">
+                <h1>KGN HOTSHOTS</h1>
+                <p>KGN HOTSHOTS & Logistics offers a wide range of emergency freight services in Western Australia and interstate. Our freight services include Australia-wide freight, Xpress hotshot and direct drives.</p>
+            </div>
+            <div class="footer2">
+                <h1>Quick Links</h1>
+                <p>Home</p>
+                <p>About</p>
+                <p>Contact Us</p>
+            </div>
+            <div class="footer3">
+                <h1>Services</h1>
+                <p>Australia-Wide Hotshots</p>
+                <p>Xpress Hotshots</p>
+
+            </div>
+            <div class="footer4">
+                <h1>Get In Touch</h1>
+                <p>Prudhvi Kumar Kashetti</p>
+                <p>0000000000</p>
+                <p>*****************@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        box-sizing: border-box;
+    }
+    
+    html{
+        font-size: 62.5%;
+    }
+    
+    /* section A */
+    
+    .A{
+        display: flex;
+        flex-direction: column;
+        /* border: 2px solid black; */
+        /* border: 2px solid green; */
+      }
+      
+      .logo{
+        /* display: flex; */
+        /* align-items: center; */
+        /* justify-content: center; */
+        display: flex;
+        flex-direction: row;
+        padding-left: 2rem;
+        /* padding: 1rem 1rem 0rem 1rem; */
+      }
+      
+      Limg{
+      
+      }
+      
+      .pk{
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* align-items: center; */
+        /* justify-content: center; */
+        /* border: 2px solid black; */
+        /* background: #e74c3c;
+        color: #fff;
+        display: inline-block;
+        line-height: 1.8;
+        padding: 0 16px;
+        font-family: 'Cinzel', serif;
+        font-weight: 300;
+        font-size: 30px;
+        line-height:1.3; */
+      }
+      
+      .K span{
+        font-size: 3rem;
+        color: #262362;
+        /* display: flex; */
+        text-decoration: none;
+        /* text-align: center; */
+        border-color: black;
+        /* justify-content: center; */
+        padding-left: 1rem;
+        font-weight: bold;
+        /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif; */
+        font-family:'Futura Std Condensed';font-weight:bold;
+      }
+      
+      .pk h1{
+        /* text-decoration: none;
+        color: #D63333;
+        border-color: black;
+        font-size: 2rem; */
+        background: #e74c3c;
+        color: #fff;
+        display: inline-block;
+        line-height: 1.8;
+        padding: 0 16px;
+        font-family: 'Cinzel', serif;
+        font-weight: 300;
+        font-size: 30px;
+        line-height:1.3;
+      }
+      
+      .contact{
+        display: flex;
+        position: absolute;
+        right: 10%;
+        top: 1%;
+        bottom: 1%;
+        /* border: 2px solid green; */
+      }
+      
+      .phone{
+        /* border: 2px solid red; */
+        /* margin-left: auto;
+        text-align: right; */
+        display: flex;
+        flex-direction: column;
+        /* position: absolute;
+        right: 0px; */
+        /* border: 2px solid red; */
+        padding-right: 10rem;
+      }
+      
+      .phone h2{
+        display: flex;
+        /* padding: 2rem 2rem 1.5rem 1.5rem; */
+        font-size: 1.8rem;
+        color: black;
+        /* border: 2px solid black; */
+      }
+      
+      .quote{
+        padding: auto;
+      
+      }
+      
+      .btn{
+        border-radius: 0.3rem;
+        border: none;
+        padding: 1.5rem 2rem 1.5rem 2rem;
+        background-color: #ef8f22;
+        outline: none;
+        width: 20rem;
+      }
+      
+      .btn p{
+        font-family: sans-serif;
+        font-weight: bolder;
+        font-size: 1.5rem;
+        color: white;
+      
+      }
+      
+      .btn:hover{
+        background: #f3b063;
+        cursor: pointer;
+      }
+      
+      .btn p:hover{
+        color: black;
+        cursor: pointer;
+      }
+      @media  screen and (min-width:768px) and (max-width:1023px) {
+        html{
+            font-size: 60%;
+        }
+        .phone h2{
+            display: none;
+        }
+      
+        /* img{
+            width: 100%;
+            height: 100%;
+        } */
+        /* .pk h1{
+          font-size: 3rem;
+        }
+      
+        .K span{
+          font-size: 5rem;
+        } */
+        
+      }
+      
+      @media screen and (max-width:767px){
+        html{
+            font-size: 35%;
+        }
+        
+        .phone h2{
+           display: none;
+        }
+        .pk h1{
+          font-size: 3rem;
+        }
+      
+        .K span{
+          font-size: 5rem;
+        }
+      
+      
+        .A{
+            width: 100%;
+        }
+        
+      
+      }
+    
+    
+    /* SECTION B  */
+    
+    .B{
+        background: url("{% static 'img/img15.jpg' %}");
+        width: 100%;
+        height: 60vh;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .nav-list{
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding-top: 2rem;
+        list-style: none;
+    }
+    
+    .nav-list li a{
+        text-decoration: none;
+        color: white;
+        font-weight: bolder; 
+        font-family: Arial, Helvetica, sans-serif; 
+        font-size: 1.5rem;
+    }
+    
+    .nav-list li a:hover{
+        color: #17171c;
+    }
+    
+    .headtext{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .headtext h1{
+        /* border: 2px solid red; */
+        /* display: flex; */
+        /* position: absolute; */
+        /* right: 2%; */
+        color: white;
+        text-align: left;
+        font-size: 6rem;
+        font-weight: bolder;
+        padding-top: 7%;
+        padding-left: 7%;
+    }
+    
+    
+    
+    
+    /* BOTTOM */
+    
+    .parallax{
+        background: url("{% static 'img/img11.jpg' %}") no-repeat fixed 100%;
+        background-position: center;
+        background-size: cover;
+        /* height: 50rem; */
+    
+    }
+    
+    .parallax-inner{
+        /* padding-top: 30%;
+        padding-bottom: 30%; */
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: space-evenly;
+    }
+    
+    .content{
+    
+    }
+    
+    .content h1{
+        position: relative;
+        font-weight: bolder;
+        color: #ffffff;
+        font-size: 3.2rem;
+        line-height: 1.4em;
+        letter-spacing: 0.1rem;
+        /* padding-bottom: 2.5rem;
+        margin-bottom: 3rem; */
+        /* font-size: 1.5rem; */
+        /* color: #777777; */
+        /* font-weight: 400; */
+        font-family: 'Open Sans', sans-serif;
+        padding-top: 10rem;
+        padding-bottom: 3rem;
+        text-align: right;
+    }
+    
+    .content p{
+        font-size: 1.7rem;
+        /* color: #9b8b8b; */
+        color: #ffffff;
+        line-height: 1.8em;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif;
+        text-align: right;
+        padding-bottom: 20rem;
+    }
+    
+    .details{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .form{
+        width: 100%;
+        max-width: 60rem;
+    }
+    .row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+    }
+    
+    .row .input_group{
+        flex-basis: 48%;
+    }
+    
+    .input_group{
+        margin-bottom: 3rem;
+        position: relative;
+    }
+    
+    input, textarea{
+       width: 100%; 
+       padding: 1rem;
+       outline: 0;
+       border: 0.3rem solid#fff;
+       color: #fff;
+       background: transparent;
+       font-size: 1.5rem;
+    }
+    
+    label{
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 1rem;
+        color: #fff;
+        cursor: text;
+        transition: 0.2s;
+    }
+    
+    button{
+        padding: 1rem 0;
+        color: #fff;
+        outline: none;
+        background: transparent;
+        border: 0.3rem solid #fff;
+        width: 40%;
+        cursor: pointer;
+    }
+    
+    input:focus~label,input:valid~label,textarea:focus~label,textarea:valid~label{
+        top: -3.5rem;
+        font-size: 1.4rem;
+    
+    }
+    
+    @media  screen and (min-width:768px) and (max-width:1023px) {
+        html{
+            font-size: 60%;
+        }
+    
+    }
+    
+    @media screen and (max-width:767px){
+        html{
+            font-size: 35%;
+        }
+        
+        
+        .content h1{
+            text-align: center;
+        }
+        .content p{
+            text-align: center;
+        }
+        .parallax-inner{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    
+    }
+    
+    /* footer  */
+    
+    .footer{
+        position: relative;
+        background-color: #17171c;
+        height: 50rem;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10rem;
+    }
+    
+    .footer1{
+        width: 30%;
+    }
+    
+    .footer1 h1{
+        position: relative;
+        font-weight: bolder;
+        color: #ffffff;
+        font-size: 2.2rem;
+        line-height: 1.4em;
+        letter-spacing: 0.1rem;
+        font-family: 'Open Sans', sans-serif;
+        padding-bottom: 2rem;
+    }
+    
+    .footer1 p{
+        width: 80%;
+        position: relative;
+        line-height: 1.8em;
+        margin: 0 0 1rem;
+        font-size: 1.5rem;
+        color: #777777;
+        line-height: 1.8em;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif; 
+    }
+    
+    .footer2{
+        width: 25%;
+    }
+    
+    .footer2 h1{
+        position: relative;
+        font-weight: bolder;
+        color: #ffffff;
+        font-size: 2.2rem;
+        line-height: 1.4em;
+        letter-spacing: 0.1rem;
+        font-family: 'Open Sans', sans-serif;
+        padding-bottom: 2rem;
+    }
+    
+    .footer2 p{
+        position: relative;
+        line-height: 1.8em;
+        margin: 0 0 1rem;
+        font-size: 1.5rem;
+        color: #777777;
+        line-height: 1.8em;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif; 
+    }
+    
+    .footer3{
+        width: 25%;
+    }
+    
+    .footer3 h1{
+        position: relative;
+        font-weight: bolder;
+        color: #ffffff;
+        font-size: 2.2rem;
+        line-height: 1.4em;
+        letter-spacing: 0.1rem;
+        font-family: 'Open Sans', sans-serif;
+        padding-bottom: 2rem;
+    }
+    
+    .footer3 p{
+        position: relative;
+        line-height: 1.8em;
+        margin: 0 0 1rem;
+        font-size: 1.5rem;
+        color: #777777;
+        line-height: 1.8em;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif; 
+    }
+    
+    .footer4{
+        width: 15%;
+    }
+    
+    .footer4 h1{
+        position: relative;
+        font-weight: bolder;
+        color: #ffffff;
+        font-size: 2.2rem;
+        line-height: 1.4em;
+        letter-spacing: 0.1rem;
+        font-family: 'Open Sans', sans-serif;
+        padding-bottom: 2rem;
+    }
+    
+    .footer4 p{
+        position: relative;
+        line-height: 1.8em;
+        margin: 0 0 1rem;
+        font-size: 1.5rem;
+        color: #777777;
+        line-height: 1.8em;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif; 
+    }
+    
+
+</style>
+</html>
+
